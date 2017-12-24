@@ -1,0 +1,19 @@
+.catalog:
+  name: Tensorflow GPU Jupyter Notebook
+  version: "v0.0.1"
+  description: Creates a Jupyter Notebook server configured to run tensorflow on GPUs
+  uuid: Jupyter-Tensorflow-0
+  minimum_rancher_version: v0.46.0
+  questions:
+    - variable: PASSWD
+      label: Notebook Password
+      required: true
+      type: password
+      description: Password to login to Jupyter Notebook Server
+    - variable: DRIVER
+      label: Nvidia SMI Driver
+      required: true
+      type: string
+      description: E.g. 384.90
+
+

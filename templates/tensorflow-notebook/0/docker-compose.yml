@@ -1,0 +1,21 @@
+version: '2'
+volumes:
+  nvidia_driver_${DRIVER}:
+    external: true
+services:
+  tf:
+    image: gcr.io/tensorflow/tensorflow:latest-gpu
+    environment:
+      PASSWORD: ${PASSWD}
+    devices:
+    - /dev/nvidia0:/dev/nvidia0:rwm
+    - /dev/nvidia1:/dev/nvidia1:rwm
+    - /dev/nvidia1:/dev/nvidia2:rwm
+    - /dev/nvidia1:/dev/nvidia3:rwm
+    - /dev/nvidiactl:/dev/nvidiactl:rwm
+    - /dev/nvidia-uvm:/dev/nvidia-uvm:rwm
+    - /dev/nvidia-uvm-tools:/dev/nvidia-uvm-tools:rwm
+    volumes:
+    - nvidia_driver_${DRIVER}:/usr/local/nvidia:ro
+    ports:
+    - 8888/tcp
