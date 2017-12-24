@@ -1,12 +1,12 @@
 version: '2'
 volumes:
-  nvidia_driver_${DRIVER}:
+  nvidia_driver_{DRIVER}:
     external: true
 services:
   tf:
     image: gcr.io/tensorflow/tensorflow:latest-gpu
     environment:
-      PASSWORD: ${PASSWD}
+      PASSWORD: KPMG
     devices:
     - /dev/nvidia0:/dev/nvidia0:rwm
     - /dev/nvidia1:/dev/nvidia1:rwm

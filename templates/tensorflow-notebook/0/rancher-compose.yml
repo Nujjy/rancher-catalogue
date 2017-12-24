@@ -11,7 +11,7 @@
       type: password
       description: Password to login to Jupyter Notebook Server
     - variable: DRIVER
-      label: Nvidia SMI Driver
+      label: Nvidia Driver Version
       required: true
       type: string
       description: E.g. 384.90
