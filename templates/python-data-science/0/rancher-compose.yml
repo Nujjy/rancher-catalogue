@@ -1,0 +1,38 @@
+.catalog:
+  name: Python Data Science Notebook
+  version: "v0.0.1"
+  description: Creates a sample python Data Science repo for your project in Gitlab.
+  uuid: Python-Data-Science-0
+  minimum_rancher_version: v0.46.0
+  questions:
+    - variable: FULL_NAME
+      label: Full Name
+      required: false
+      type: string
+    - variable: EMAIL
+      label: Email
+      required: false
+      type: string
+    - variable: GITLAB_URL
+      label: Gitlab Server Address
+      required: true
+      type: string
+      description: E.g. useomlxd00012.nix.us.kworld.kpmg.com
+    - variable: PROJECT_NAME
+      label: Project Name
+      required: true
+      type: string
+    - variable: PROJECT_SHORT_DESCRIPTION
+      label: Project Description
+      required: true
+      type: string
+    - variable: NAME_SPACE
+      label: Gitlab Group
+      required: true
+      type: string
+      description: E.g. kcal
+    - variable: GITLAB_SECRET
+      label: Gitlab Secret
+      required: true
+      type: string
+      description: Rancher Secret Name for Gitlab Personal Token.

@@ -1,0 +1,6 @@
+name: Tensorflow GPU Jupyter Notebook
+description: |
+  Creates a Jupyter Notebook server configured to run tensorflow on GPUs
+version: "v0.0.1"
+category: data Science
+maintainer: Nujjy

@@ -1,0 +1,23 @@
+version: '2'
+services:
+  repo:
+    image: anujkhanna/cookiecutter-python-data-science
+    entrypoint: [source, env-secrets.sh]
+    environment:
+      FULL_NAME: $FULL_NAME
+      EMAIL: $EMAIL
+      GITLAB_URL: $GITLAB_URL
+      PROJECT_NAME: $PROJECT_NAME
+      GROUP_NAME: $NAME_SPACE
+      PROJECT_SHORT_DESCRIPTION: $PROJECT_SHORT_DESCRIPTION
+      GITLAB_SECRET_FILE: /run/secrets/$GITLAB_SECRET
+    secrets:
+    - $GITLAB_SECRET
+    labels:
+      io.rancher.container.pull_image: always
+    ports:
+    - 8888/tcp
+
+secrets:
+ {GITLAB_SECRET}:
+    external: true
