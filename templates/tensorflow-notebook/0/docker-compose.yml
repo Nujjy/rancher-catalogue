@@ -6,7 +6,7 @@ services:
   tf:
     image: gcr.io/tensorflow/tensorflow:latest-gpu
     environment:
-      PASSWORD: KPMG
+      PASSWORD: $PASSWD
     devices:
     - /dev/nvidia0:/dev/nvidia0:rwm
     - /dev/nvidia1:/dev/nvidia1:rwm
