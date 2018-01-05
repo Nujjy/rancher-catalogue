@@ -19,5 +19,5 @@ services:
     - 8888/tcp
 
 secrets:
- {GITLAB_SECRET}:
+ ${GITLAB_SECRET}:
     external: true
