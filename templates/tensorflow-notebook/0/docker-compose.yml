@@ -1,7 +1,10 @@
 version: '2'
 volumes:
-  nvidia_driver_{DRIVER}:
+  nvidia_driver_384.90:
     external: true
+  nfs:
+    driver: rancher-nfs
+
 services:
   tf:
     image: gcr.io/tensorflow/tensorflow:latest-gpu
@@ -16,6 +19,7 @@ services:
     - /dev/nvidia-uvm:/dev/nvidia-uvm:rwm
     - /dev/nvidia-uvm-tools:/dev/nvidia-uvm-tools:rwm
     volumes:
-    - nvidia_driver_${DRIVER}:/usr/local/nvidia:ro
+    - nvidia_driver_384.90:/usr/local/nvidia:ro
+    - nfs:/notebooks
     ports:
     - 8888/tcp
